@@ -1,0 +1,13 @@
+[master 0bcc113] d2hvYW1pCg==
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Ib
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 237 bytes | 237.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: d2hvYW1pCg==
+remote: git
+To http://172.16.53.245/root/another-test.git
+   0573441..0bcc113  master -> master
