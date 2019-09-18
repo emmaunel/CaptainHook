@@ -7,6 +7,8 @@ while true; do
     echo ${encode}
     touch $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1)
     git add -A > /dev/null
-    git commit -m ${encode} /dev/null
+    git commit -m ${encode} > /dev/null
+    #can't figure out how to hide the pushing info
+    #I tried moving to /dev/null but no luck
     git push | grep "remote: " | awk '{print $2}'
 done
