@@ -1,9 +1,5 @@
 #!/bin/bash
 
-random(){
-    retun cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1
-}
-
 while true; do
     echo "CapHook> "
     read command
@@ -12,5 +8,5 @@ while true; do
     touch $(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1)
     git add .
     git commit -m ${encode}
-    git push | grep "remote: " | awk '{print $2}'
+#    git push | grep "remote: " | awk '{print $2}'
 done
