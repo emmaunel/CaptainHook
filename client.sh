@@ -11,4 +11,6 @@ while true; do
     #This is the best I could come up with
     git push 2>&1 | tee /tmp/git
     cat /tmp/git | grep "remote: " | awk '{print $2}'
+	#We could clear our commit history to be hidden
+	#have a flag like -f to go hidden mode which is above
 done
